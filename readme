@@ -17,7 +17,6 @@ financial-text-topic-modelling/
 │   └── train_lda.py            # Dataset loading, LDA training & coherence evaluation
 ├── data/                   # Sample datasets for testing
 ├── models/                 # Saved Gensim LDA model & dictionary
-├── notebooks/              # Exploratory notebooks (if applicable)
 ├── screenshots/            # Working Streamlit GUI screenshots
 ├── requirements.txt        # Python dependencies
 ├── .gitignore
