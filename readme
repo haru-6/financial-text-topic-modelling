@@ -1,0 +1,87 @@
+# Financial Text Topic Modelling
+
+An end-to-end Natural Language Processing (NLP) pipeline and interactive **Streamlit** web application for discovering latent topics in financial news and text documents using **Gensim Latent Dirichlet Allocation (LDA)**.
+
+## Overview
+
+Financial headlines, market commentary, and news snippets span dozens of recurring themes—such as earnings, central bank policy, mergers & acquisitions, commodities, and market movements. This project preprocesses financial text, trains an LDA topic model on the `zeroshot/twitter-financial-news-topic` dataset, evaluates topic coherence ($C_v$), and provides a Streamlit interface for exploring topics and assigning topics to new documents.
+
+## Repository Structure
+
+```text
+financial-text-topic-modelling/
+├── app.py                  # Streamlit web GUI
+├── src/
+│   ├── __init__.py
+│   ├── preprocess.py           # Text cleaning & tokenization for LDA
+│   └── train_lda.py            # Dataset loading, LDA training & coherence evaluation
+├── data/                   # Sample datasets for testing
+├── models/                 # Saved Gensim LDA model & dictionary
+├── notebooks/              # Exploratory notebooks (if applicable)
+├── screenshots/            # Working Streamlit GUI screenshots
+├── requirements.txt        # Python dependencies
+├── .gitignore
+└── README.md
+
+
+Setup & Installation
+
+Clone the repository:
+
+Bash
+
+git clone [https://github.com/YOUR_USERNAME/financial-text-topic-modelling.git](https://github.com/YOUR_USERNAME/financial-text-topic-modelling.git)
+cd financial-text-topic-modelling
+Create and activate a virtual environment (Python 3.12 recommended for gensim compatibility):
+
+Bash
+
+py -3.12 -m venv .venv312
+.venv312\Scripts\Activate.ps1
+Install dependencies:
+
+Bash
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+
+
+Usage
+
+
+1. Train the LDA Topic Model
+
+Run the training script to clean the dataset, build the dictionary/corpus, train the LDA model, and log topic coherence (𝐶𝑣):
+
+Bash
+
+python src/train_lda.py
+
+
+
+2. Launch the Streamlit Web App
+
+
+Bash
+
+streamlit run app.py
+
+
+
+In the web interface, you can:
+
+Upload a dataset/file or use sample financial text.
+
+Run topic modelling and inspect discovered topics along with their top keywords/weights and coherence score (𝐶𝑣).
+
+View document-to-topic assignments, distribution charts, and filter/download results.
+
+
+
+Screenshots
+
+
+Discovered Topics & Coherence (𝐶𝑣): screenshots/discovered_topics.png
+
+Topic Assignments & Distribution Chart: screenshots/topic_assignments_and_chart.png
